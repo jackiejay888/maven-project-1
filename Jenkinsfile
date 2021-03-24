@@ -1,5 +1,5 @@
 
-peline {
+pipeline {
     agent any
     tools{
         maven 'local maven'
@@ -14,4 +14,4 @@ peline {
     }
 
   
-}}
+}
