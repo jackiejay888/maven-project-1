@@ -1,4 +1,5 @@
-pipeline {
+
+peline {
     agent any
     tools{
         maven 'local maven'
@@ -7,7 +8,10 @@ pipeline {
         stage ('build'){
             steps{
                 sh 'mvn clean package'
+        
             }
         }
     }
-}
+
+  
+}}
