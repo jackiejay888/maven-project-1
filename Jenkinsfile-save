@@ -11,7 +11,7 @@ pipeline {
             }
             post {
                 success {
-                    echo '开始存档....'
+                    echo 'Starting save....'
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
             }
@@ -25,18 +25,18 @@ pipeline {
          stage ('Deploy to Production'){
             steps{
                 timeout(time:5, unit:'DAYS'){
-                    input message:'是否部署到生产环境?' 
+                    input message:'Could you want to deploy to the production environment?' 
                 }
 
                 build job: 'deploy-to-production'
             }
             post {
                 success {
-                    echo '代码成功部署到生产环境'
+                    echo 'The code is deploy to production environment.'
                 }
 
                 failure {
-                    echo ' 部署失败'
+                    echo 'Deploy failed.'
                 }
             }
         }
